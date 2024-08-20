@@ -1,4 +1,4 @@
-package com.Location.List.Microservices.com.Location.List.Microservices;
+package com.Location.List.Microservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
