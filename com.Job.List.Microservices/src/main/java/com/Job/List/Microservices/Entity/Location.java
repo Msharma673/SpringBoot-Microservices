@@ -1,4 +1,6 @@
-package com.User.Microservices.Entity;
+package com.Job.List.Microservices.Entity;
+
+
 
 import lombok.Data;
 import lombok.Getter;
@@ -35,8 +37,5 @@ public class Location {
 		this.city = city;
 	}
 
-	
-	
-	
 
 }

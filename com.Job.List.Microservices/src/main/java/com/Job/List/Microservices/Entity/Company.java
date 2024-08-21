@@ -1,20 +1,29 @@
-package com.User.Microservices.Entity;
+package com.Job.List.Microservices.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Data
 @Getter
 @Setter
+@Entity
+@Builder
 public class Company {
 	
 
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id")
 	private Long id;
 	
 	private String name;
@@ -57,7 +66,5 @@ public class Company {
 	}
 
 
-	
-	
-	
+
 }

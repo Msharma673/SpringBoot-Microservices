@@ -1,4 +1,4 @@
-package com.Job.List.Microservices.com.Job.List.Microservices;
+package com.Job.List.Microservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
