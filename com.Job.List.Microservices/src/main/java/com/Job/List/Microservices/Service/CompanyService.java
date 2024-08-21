@@ -6,18 +6,15 @@ import java.util.Optional;
 import com.Job.List.Microservices.Entity.Company;
 
 public interface CompanyService {
-	
-	
-	//create
 
-    Company create(Company company);
+	// create
 
-    //get all
-    List<Company> getAll();
+	Company create(Company company);
 
-    //get single
-   Optional<Company> get(Long id);
+	// get all
+	List<Company> getAll();
 
-	
-	
+	// get single
+	Company get(Long id);
+
 }

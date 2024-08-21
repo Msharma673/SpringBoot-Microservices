@@ -37,5 +37,10 @@ public class Location {
 		this.city = city;
 	}
 
+	public Location() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 
 }
