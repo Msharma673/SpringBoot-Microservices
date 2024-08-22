@@ -1,0 +1,40 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: API-GATEWAY-MICROSERVICES
+  config:
+    import: optional:configserver:http://localhost:8086
+  cloud:
+    gateway:
+      routes:
+        - id: LOCATION-LIST-MICROSERVICES
+          uri: lb://LOCATION-LIST-MICROSERVICES
+          predicates:
+            - Path=/location/**
+          
+        - id: JOB-LIST-MICROSERVICES
+          uri: lb://JOB-LIST-MICROSERVICES
+          predicates:
+            - Path=/company/**
+          
+        - id: USER-MICROSERVICES
+          uri: lb://USER-MICROSERVICES
+          predicates:
+            - Path=/user/**
+        
+        # Example route with Cookie predicate
+        - id: after_route
+          uri: https://example.org
+          predicates:
+            - Cookie=mycookie,mycookievalue
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
