@@ -8,7 +8,7 @@ import com.Job.List.Microservices.Entity.Company;
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long>{
 	
-	public Company companyById(Long id);
+	
 	
 	
 

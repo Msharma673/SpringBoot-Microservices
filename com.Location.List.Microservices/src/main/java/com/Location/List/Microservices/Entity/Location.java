@@ -17,7 +17,6 @@ import lombok.Setter;
 @Setter
 @Entity
 @Builder
-
 public class Location {
 	
 	@Id

@@ -1,5 +1,7 @@
 package com.Job.List.Microservices.Controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Job.List.Microservices.Entity.Company;
-import com.Job.List.Microservices.FeignClient.feignLocation;
+
 import com.Job.List.Microservices.Service.CompanyService;
 
 @RestController
@@ -21,8 +23,8 @@ public class CompanyController {
 	@Autowired
 	private CompanyService companyservice;
 	
-	@Autowired
-	private feignLocation feign;
+//	@Autowired
+//	private feignLocation feign;
 	
 	
 	
@@ -34,8 +36,8 @@ public class CompanyController {
 	}
 	
 	
-	 @GetMapping("/get-comapny-id/{id}")
-		public Company getCompanyById(@PathVariable Long id){
+	 @GetMapping("/get-company-id/{id}")
+		public Optional<Company> getCompanyById(@PathVariable("id") Long id){
 		 
 		 return companyservice.get(id);
 			

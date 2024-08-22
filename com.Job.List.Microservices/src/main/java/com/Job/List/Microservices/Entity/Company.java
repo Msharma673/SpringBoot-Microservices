@@ -1,14 +1,13 @@
 package com.Job.List.Microservices.Entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,16 +16,17 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "company")
 public class Company {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Long id;
-	
+
 	private Long locationid;
+
 	private String name;
-	
 
 	private String fathername;
 
@@ -35,12 +35,25 @@ public class Company {
 	private String designation;
 
 	private String toataltime;
-	
-	@ElementCollection
-	List<Location> location = new ArrayList<>();
+
+	@Transient
+    private Location location;
+//	
+//	@OneToMany // Assuming this is a one-to-many relationship
+//    //@JoinColumn(name = "id")  // You need to define a foreign key column in the Location table
+//	 private List<Location> location = new ArrayList<>();
+
+	public Long getLocationId() {
+        return locationid;
+    }
+
+	public Company() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public Company(Long id, Long locationid, String name, String fathername, String companyname, String designation,
-			String toataltime, List<Location> location) {
+			String toataltime, Location location) {
 		super();
 		this.id = id;
 		this.locationid = locationid;
@@ -50,11 +63,6 @@ public class Company {
 		this.designation = designation;
 		this.toataltime = toataltime;
 		this.location = location;
-	}
-
-	public Company() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Company(Long id, Long locationid, String name, String fathername, String companyname, String designation,
@@ -68,7 +76,6 @@ public class Company {
 		this.designation = designation;
 		this.toataltime = toataltime;
 	}
-
-
+	
 
 }
