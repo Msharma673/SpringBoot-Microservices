@@ -33,12 +33,9 @@ public class User {
 	
 	@Transient
 	private Company company;
-	
-	@Transient
-	private Location location;
 
 	public User(Long userid, Long companyid, Long locationid, String name, String age, String fatherName,
-			Company company, Location location) {
+			Company company) {
 		super();
 		this.userid = userid;
 		this.companyid = companyid;
@@ -47,7 +44,6 @@ public class User {
 		this.age = age;
 		this.fatherName = fatherName;
 		this.company = company;
-		this.location = location;
 	}
 
 	public User(Long userid, Long companyid, Long locationid, String name, String age, String fatherName) {
@@ -64,6 +60,7 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	
 	

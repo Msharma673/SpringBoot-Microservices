@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class Location {
 
-	private Long id;
+	private Long locationid;
 	
 	private String name;
 	
@@ -23,10 +23,10 @@ public class Location {
 	
 	private String city;
 
-	public Location(Long id, String name, String fathername, String companyname, String country, String state,
+	public Location(Long locationid, String name, String fathername, String companyname, String country, String state,
 			String city) {
 		super();
-		this.id = id;
+		this.locationid = locationid;
 		this.name = name;
 		this.fathername = fathername;
 		this.companyname = companyname;
@@ -35,6 +35,12 @@ public class Location {
 		this.city = city;
 	}
 
+	public Location() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
 	
 	
 	

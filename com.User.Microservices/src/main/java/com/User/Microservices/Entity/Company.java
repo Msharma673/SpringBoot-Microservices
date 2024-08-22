@@ -13,9 +13,6 @@ import lombok.Setter;
 @Data
 
 public class Company {
-	
-
-
 	private Long companyid;
 	
 	private Long locationid;
