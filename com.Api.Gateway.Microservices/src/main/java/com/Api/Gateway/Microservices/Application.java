@@ -1,4 +1,4 @@
-package com.Api.Gateway.Microservices.com.Api.Gateway.Microservices;
+package com.Api.Gateway.Microservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
