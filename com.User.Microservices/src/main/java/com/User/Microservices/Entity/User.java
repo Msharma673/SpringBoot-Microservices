@@ -23,6 +23,9 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long userid;
 	private Long companyid;
+	public Long getCompanyId() {
+        return companyid;
+    }
 	private Long locationid;
 	private String name;
 	private String age;

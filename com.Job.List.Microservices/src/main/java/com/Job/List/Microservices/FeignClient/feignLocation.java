@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.Job.List.Microservices.Entity.Location;
 
 //@FeignClient(name= "LOCATION-LIST-MIOCROSERVICES, url="localhost:8084")
-@FeignClient(name = "LOCATION-LIST-MIOCROSERVICES")
+@FeignClient(name = "LOCATION-LIST-MICROSERVICES")
 public interface feignLocation {
 	
 	
