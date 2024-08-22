@@ -21,10 +21,14 @@ public class Company {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
-	private Long id;
+	@Column(name = "companyid")
+	private Long companyid;
 
 	private Long locationid;
+	
+	public Long getLocationId() {
+        return locationid;
+    }
 
 	private String name;
 
@@ -43,19 +47,17 @@ public class Company {
 //    //@JoinColumn(name = "id")  // You need to define a foreign key column in the Location table
 //	 private List<Location> location = new ArrayList<>();
 
-	public Long getLocationId() {
-        return locationid;
-    }
+	
 
 	public Company() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Company(Long id, Long locationid, String name, String fathername, String companyname, String designation,
-			String toataltime, Location location) {
+	public Company(Long companyid, Long locationid, String name, String fathername, String companyname,
+			String designation, String toataltime, Location location) {
 		super();
-		this.id = id;
+		this.companyid = companyid;
 		this.locationid = locationid;
 		this.name = name;
 		this.fathername = fathername;
@@ -65,10 +67,10 @@ public class Company {
 		this.location = location;
 	}
 
-	public Company(Long id, Long locationid, String name, String fathername, String companyname, String designation,
-			String toataltime) {
+	public Company(Long companyid, Long locationid, String name, String fathername, String companyname,
+			String designation, String toataltime) {
 		super();
-		this.id = id;
+		this.companyid = companyid;
 		this.locationid = locationid;
 		this.name = name;
 		this.fathername = fathername;
@@ -76,6 +78,8 @@ public class Company {
 		this.designation = designation;
 		this.toataltime = toataltime;
 	}
+
+
 	
 
 }

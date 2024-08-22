@@ -4,7 +4,6 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
 public class Location {
 
 	private Long locationid;
@@ -20,6 +19,23 @@ public class Location {
 	private String state;
 	
 	private String city;
+
+	public Location() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Location(Long locationid, String name, String fathername, String companyname, String country, String state,
+			String city) {
+		super();
+		this.locationid = locationid;
+		this.name = name;
+		this.fathername = fathername;
+		this.companyname = companyname;
+		this.country = country;
+		this.state = state;
+		this.city = city;
+	}
 
 
 	

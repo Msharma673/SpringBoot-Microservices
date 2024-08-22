@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -20,27 +21,48 @@ import lombok.Setter;
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private Long userid;
+	private Long companyid;
+	private Long locationid;
 	private String name;
 	private String age;
 	private String fatherName;
-	List<Company> company = new ArrayList<>();
+	
+	@Transient
+	private Company company;
+	
+	@Transient
+	private Location location;
 
-	public User(Long id, String name, String age, String fatherName, List<Company> company) {
+	public User(Long userid, Long companyid, Long locationid, String name, String age, String fatherName,
+			Company company, Location location) {
 		super();
-		this.id = id;
+		this.userid = userid;
+		this.companyid = companyid;
+		this.locationid = locationid;
 		this.name = name;
 		this.age = age;
 		this.fatherName = fatherName;
 		this.company = company;
+		this.location = location;
 	}
 
-	public User(Long id, String name, String age, String fatherName) {
+	public User(Long userid, Long companyid, Long locationid, String name, String age, String fatherName) {
 		super();
-		this.id = id;
+		this.userid = userid;
+		this.companyid = companyid;
+		this.locationid = locationid;
 		this.name = name;
 		this.age = age;
 		this.fatherName = fatherName;
 	}
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
 
 }
