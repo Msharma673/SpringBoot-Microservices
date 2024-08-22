@@ -21,8 +21,8 @@ public class Location {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="id")
-	private Long id;
+	@Column(name="locationid")
+	private Long locationid;
 	@Column(name="name")
 	private String name;
 	@Column(name="fathername")
@@ -35,21 +35,24 @@ public class Location {
 	private String state;
 	@Column(name="city")
 	private String city;
-	public Location(Long id, String name, String fathername, String companyname, String country, String state,
+
+	
+	public Location() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Location(Long locationid, String name, String fathername, String companyname, String country, String state,
 			String city) {
 		super();
-		this.id = id;
+		this.locationid = locationid;
 		this.name = name;
 		this.fathername = fathername;
 		this.companyname = companyname;
 		this.country = country;
 		this.state = state;
 		this.city = city;
-	}
-	
-	public Location() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	
